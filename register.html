@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register Page</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #a8c0ff, #3f2b96);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 94%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.login-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5c67a3;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.login-container input[type="submit"]:hover {
+    background-color: #4c52a3;
+}
+
+
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Register</h2>
+        <form action="./register.php" method="post" id="registerForm">
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <input type="submit" value="REGISTER">
+        </form>
+    </div>
+    <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    var registerForm = document.getElementById('registerForm');
+    registerForm.onsubmit = function (e) {
+        var email = document.getElementsByName('email')[0].value;
+        var password = document.getElementsByName('password')[0].value;
+        var confirm_password = document.getElementsByName('confirm_password')[0].value;
+
+        // Validasi email
+        if (!email.includes('@') || !email.includes('.')) {
+            alert('Please enter a valid email address.');
+            e.preventDefault();
+            return false;
+        }
+
+        // Validasi panjang password
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters long.');
+            e.preventDefault();
+            return false;
+        }
+
+        // Periksa apakah password dan confirm_password cocok
+        if (password !== confirm_password) {
+            alert('Passwords do not match.');
+            e.preventDefault();
+            return false;
+        }
+
+        return true;
+    };
+});
+
+    </script>
+</body>
+</html>

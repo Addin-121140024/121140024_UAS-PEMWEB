@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .table-container {
+    margin: 20px;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 3px #ccc;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+    border-top: 2px solid #ccc;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .edit-btn, .delete-btn {
+    padding: 5px 15px;
+    margin-left: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .edit-btn {
+    background-color: #4CAF50;
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+  }
+  
+  .edit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .delete-btn:hover {
+    background-color: #da190b;
+  }
+  

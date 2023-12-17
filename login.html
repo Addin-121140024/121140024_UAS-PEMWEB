@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #a8c0ff, #3f2b96);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .login-container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+    }
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+        width: 94%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .login-container input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #5c67a3;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .login-container input[type="submit"]:hover {
+        background-color: #4c52a3;
+    }
+    .login-container img {
+        margin-top: 15px;
+    }
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="DALL·E 2023-11-30 16.00.08 - A logo design for an Instagram profile for a community service group, KKN Group 80, focusing on village farming. The logo includes the text 'KKN Kelom.png" alt="Logo" width="50" height="50">
+        <h2>GMAIL</h2>
+        <form action="./login.php" method="post">
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="LOGIN">
+        </form>
+    </div>
+    <script>
+        // Fungsi untuk menvalidasi input form
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var errorMessages = [];
+        
+            // Validasi alamat email
+            if (!email.includes('@') || !email.includes('.')) {
+                errorMessages.push('Please enter a valid email address.');
+            }
+        
+            // Validasi panjang password
+            if (password.length < 6) {
+                errorMessages.push('Password must be at least 6 characters long.');
+            }
+        
+            // Jika terdapat error, tampilkan pesan dan cegah form dari disubmit
+            if (errorMessages.length > 0) {
+                alert(errorMessages.join('\n'));
+                return false; // Mengembalikan false akan mencegah form disubmit
+            }
+        
+            // Jika tidak ada error, form akan disubmit
+            return true;
+        }
+        
+        // Event listener untuk form submit
+        document.querySelector('form').onsubmit = validateForm;
+        </script>
+        
+</body>
+</html>
